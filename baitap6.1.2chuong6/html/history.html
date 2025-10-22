@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử Halloween</title>
+    <link rel="stylesheet" href="../css/history.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">🎃 Halloween Festival</div>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="history.html">Lịch sử</a></li>
+            <li><a href="shop.html">Gian hàng</a></li>
+            <li><a href="gallery.html">Bộ sưu tập hình ảnh</a></li>
+            <li><a href="contact.html">Form liên hệ</a></li>
+            <li><a href="register.html">Form đăng ký</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="history-section">
+        <div class="slide active">
+            <h2>🎃 Nguồn gốc</h2>
+            <p>Halloween bắt nguồn từ lễ Samhain của người Celt cổ — đánh dấu thời điểm kết thúc mùa màng và bắt đầu mùa đông.</p>
+        </div>
+
+        <div class="slide">
+            <h2>👻 Niềm tin ma quỷ</h2>
+            <p>Người Celt tin rằng đêm 31/10, ranh giới giữa người sống và linh hồn mở ra, và các linh hồn trở lại trần gian.</p>
+        </div>
+
+        <div class="slide">
+            <h2>🔥 Xua đuổi ma quỷ</h2>
+            <p>Để xua đuổi ma quỷ, người xưa đốt lửa lớn và hóa trang thành những hình dạng đáng sợ.</p>
+        </div>
+
+        <div class="slide">
+            <h2>🕸️ Lan rộng</h2>
+            <p>Sau này, Halloween kết hợp với Kitô giáo và lan rộng sang châu Âu, Mỹ, trở thành một ngày lễ lớn.</p>
+        </div>
+
+        <div class="slide">
+            <h2>🍬 Hiện nay</h2>
+            <p>Ngày nay, Halloween là dịp để hóa trang, “trick or treat” và tham gia các lễ hội vui nhộn trên toàn thế giới.</p>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" id="prevBtn">⬅ Quay lại</button>
+            <button class="btn" id="nextBtn">Tiếp ➡</button>
+        </div>
+    </div>
+
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+
+
+#controlPanel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+#controlPanel button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background-color: #3498db;
+    color: white;
+}
+
+#controlPanel button:hover {
+    background-color: #2980b9;
+}
+
+#content {
+    position: relative;
+    width: px;
+    height: 991px;
+    overflow: hidden;
+    background-image: url("images/underwater.jpg");
+    background-size: cover;
+}
+
+
+#shark {
+    position: absolute;
+    left: 100px;
+    top: 500px;
+    animation: chase 10s linear 0s infinite normal;
+}
+
+#fishschool {
+    position: absolute;
+    left: 400px;
+    top: 500px;
+    animation: chase 10s linear 0s infinite normal;
+}
+
+@keyframes chase {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    10% {
+        transform: translate(299px, 0px) scaleX(1);
+    }
+
+    20% {
+        transform: translate(600px, -200px) scaleX(1);
+    }
+
+    21% {
+        transform: translate(600px, -200px) scaleX(-1);
+    }
+
+    99% {
+        transform: translate(0, 0) scaleX(-1);
+    }
+}
+
+#turtle {
+    position: absolute;
+    left: 100px;
+    top: 800px;
+    animation: turtle 15s linear 0s infinite normal;
+}
+
+@keyframes turtle {
+    0% {
+        transform: translate(0, 0) scaleX(1);
+    }
+
+    50% {
+        transform: translate(600px, 0) scaleX(1);
+    }
+
+    51% {
+        transform: translate(600px, 0) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(0, 0) scaleX(-1);
+    }
+}
+
+#diver1 {
+    position: absolute;
+    left: 200px;
+    top: 900px;
+    animation: diver1 15s linear 0s infinite normal;
+}
+
+@keyframes diver1 {
+    0% {
+        transform: translate(600px, 0) scaleX(-1);
+    }
+
+    50% {
+        transform: translate(0, 0) scaleX(-1);
+    }
+
+    51% {
+        transform: translate(0, 0) scaleX(1);
+    }
+
+    100% {
+        transform: translate(600px, 0) scaleX(1);
+    }
+}
+
+#diver2 {
+    position: absolute;
+    left: 200px;
+    top: 150px;
+    animation: diver1 20s linear 0s infinite normal;
+}
+
+@keyframes diver2 {
+    0% {
+        transform: translate(0, 0) scaleX(1);
+    }
+
+    50% {
+        transform: translate(660px, 0) scaleX(1);
+    }
+
+    51% {
+        transform: translate(660px, 0) scaleX(-1);
+    }
+
+    100% {
+        transform: translate(0, 0) scaleX(-1);
+    }
+}
+
+#diver3 {
+    position: absolute;
+    left: 900px;
+    top: 100px;
+    animation: diver1 13s linear 0s infinite normal;
+}
+
+@keyframes diver3 {
+    0% {
+        transform: translate(600px, 0) scaleX(-1);
+    }
+
+    50% {
+        transform: translate(0, 0) scaleX(-1);
+    }
+
+    51% {
+        transform: translate(0, 0) scaleX(1);
+    }
+
+    100% {
+        transform: translate(600px, 0) scaleX(1);
+    }
+}
+
+#bubble1 {
+    position: absolute;
+    left: 1000px;
+    top: 1200px;
+    animation: bubble 13s linear 0s infinite normal;
+}
+
+#bubble2 {
+    position: absolute;
+    left: 500px;
+    top: 1500px;
+    animation: bubble 13s linear 0s infinite normal;
+}
+
+#bubble3 {
+    position: absolute;
+    left: 200px;
+    top: 1300px;
+    animation: bubble 13s linear 0s infinite normal;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, -1500px);
+    }
+}

@@ -1,0 +1,141 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: orange;
+    text-shadow: 0 0 15px orange;
+    animation: titleFade 2s ease-in-out;
+}
+
+@keyframes titleFade {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    margin-top: 40px;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    width: 45%;
+    text-align: left;
+    animation: floatBox 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatBox {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.info-box h2 {
+    color: orange;
+    margin-bottom: 10px;
+}
+
+.start-box {
+    background: orange;
+    color: black;
+    padding: 20px;
+    width: 45%;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.start-box:hover {
+    transform: scale(1.1);
+    background: #ff7700;
+    box-shadow: 0 0 20px orange;
+}
+
+
+.ghost {
+    position: absolute;
+    top: -100px;
+    width: 80px;
+    opacity: 0.8;
+    animation: flyGhost 12s linear infinite;
+}
+
+.ghost:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.ghost:nth-child(2) {
+    left: 50%;
+    width: 100px;
+    animation-delay: 3s;
+}
+
+.ghost:nth-child(3) {
+    left: 80%;
+    width: 60px;
+    animation-delay: 6s;
+}
+
+@keyframes flyGhost {
+    0% {
+        top: -120px;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(50px) rotate(10deg);
+    }
+
+    100% {
+        top: 110vh;
+        transform: translateX(-50px) rotate(-10deg);
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.9rem;
+    color: #888;
+}

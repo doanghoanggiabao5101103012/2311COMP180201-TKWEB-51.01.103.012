@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 3.3 chương 3 Quản lý sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+        .inp{
+            padding:50px;
+            background-color:lightgrey;
+            border-radius:5px;
+            display:inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Add New Product</h1>
+    <div class="inp" class="container-fluid">
+        <div>
+            <input type="text" id="newproduct" value="" placeholder="New Product" style="width:60vw" > 
+            <button type="button" class="btn btn-success" id="add" onclick="add()">Add</button>        
+        </div>
+    </div>
+    <div>
+        <h1>Display All Product</h1>
+    </div>
+    <div class="container-fluid">
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col" class="text-end" id="productnum">9 products</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+                
+        </table>
+    </div>
+    
+    <script>
+        ds=["Sony Xperia","Samsung Galaxy","Nokia 6", "Xiaomi Redmi Note 4", "Apple iPhone 6S", "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", "Fujitsu F-04E", "Oppo A71"];
+        function show(){
+            table=''
+            for (let i=0;i<ds.length;i++){
+                table+='<tr id="newedit'+i+'"><td>'+ds[i] +'</td><td><button type="button" class="btn btn-primary" onclick="edit('+i+')">Edit</button></td><td><button type="button" class="btn btn-danger" onclick="del('+i+')">Delete</button></td></tr>'
+            }
+        return table;
+        }
+        document.getElementById('tbody').innerHTML=show();
+        function add(){
+            ds.push(document.getElementById('newproduct').value);
+            document.getElementById('tbody').innerHTML=show();
+            document.getElementById('productnum').innerText=ds.length+" products";
+        }
+
+
+        function edit(i){
+            document.getElementById('newedit'+i).innerHTML='<tr id="newedit'+i+'"><td><input type="text" value="" id="editedname'+i+'" placeholder="Sửa sản phẩm" style="width:30vw; margin-right: 10px"><button type="button" class="btn btn-success" id="submit" onclick="submit('+i+')">Submit</button></td><td><button type="button" class="btn btn-primary" onclick="edit('+i+')">Edit</button></td><td><button type="button" class="btn btn-danger" onclick="del('+i+')">Delete</button></td><tr>';
+        }
+        function submit(i){
+            ds[i]=document.getElementById('editedname'+i).value;
+            document.getElementById('tbody').innerHTML=show();
+            document.getElementById('productnum').innerText=ds.length+" products";
+        }
+        function del(i){
+            ds.splice(i,1);
+            document.getElementById('tbody').innerHTML=show();         
+            document.getElementById('productnum').innerText=ds.length+" products";   
+        }
+    </script>
+</body>
+</html>

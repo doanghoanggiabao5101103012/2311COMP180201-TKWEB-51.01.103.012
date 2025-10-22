@@ -1,0 +1,133 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .cv-wrapper {
+        width: 900px;
+        background-color: #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        display: flex;
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .header-left {
+        width: 40%;
+        background-color: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    img {
+        width: 10vw;
+        aspect-ratio: 1/1;
+        background-color: #555;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .header-right {
+        width: 60%;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .name {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .position {
+        font-size: 20px;
+        color: #666;
+        margin-top: 10px;
+    }
+
+    /* Nội dung chính */
+    .main {
+        display: flex;
+        width: 100%;
+    }
+
+    .main-left {
+        width: 40%;
+        background-color: #222;
+        padding: 30px;
+        color: white;
+    }
+
+    .main-right {
+        width: 60%;
+        padding: 30px;
+        color:#000;
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #000;
+        display: inline-block;
+    }
+
+    .section {
+        margin-bottom: 25px;
+    }
+
+    .section p {
+        font-size: 14px;
+        margin: 8px 0;
+        line-height: 1.5;
+    }
+
+    .skill-list,
+    .cert-list,
+    .exp-list {
+        list-style: none;
+        margin-top: 8px;
+    }
+
+    .skill-list li,
+    .cert-list li,
+    .exp-list li {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .ref-name {
+        font-weight: bold;
+    }
+
+    .progress-container {
+        width: 100%;
+        background-color: #ddd;
+        border-radius: 20px;
+        overflow: hidden;
+        height: 10px;
+    }
+
+    .progress-bar {
+        width: 60%;
+        background-color: #4CAF50;
+        height: 100%;
+    }
