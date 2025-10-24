@@ -1,39 +1,136 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách bài tập</title>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+        .sc-track {
+            border: 1px solid black;
+            border-radius: 1em;
+            display: flex;
+            overflow-x: scroll;
+            gap: 1em;
+            anchor-name: --carousel;
+            scroll-snap-type: x mandatory;
+            scroll-marker-group: after;
+            scroll-behavior: smooth;
         }
-        h1 { color: #333; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; }
-        a {
+
+        .sc-track::scroll-marker-group {
+            margin: 1em;
+            display: flex;
+            justify-content: center;
+            gap: .5em;
+        }
+
+        .sc-item::scroll-marker {
+            content: "";
+            height: 1em;
+            width: 1em;
+            background-color: gray;
+            border-radius: 50%;
+        }
+
+        .sc-item::scroll-marker:target-current {
+            background-color: black;
+        }
+
+        .sc-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .sc-track::scroll-button(right),
+        .sc-track::scroll-button(left) {
+            content: "←";
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            aspect-ratio: 1 / 1;
+            inline-size: 2rem;
+            block-size: 2rem;
+            font-size: 1.25rem;
+            background-color: black;
+            color: white;
+
+            position: fixed;
+            position-anchor: --carousel;
+            position-area: right center;
+        }
+
+        .sc-track::scroll-button(right):disabled,
+        .sc-track::scroll-button(left):disabled {
+            opacity: 0.5;
+            cursor: auto;
+        }
+
+        .sc-track::scroll-button(left) {
+            position-area: left center;
+        }
+
+        .sc-track::scroll-button(right) {
+            content: "→";
+
+        }
+
+        .sc-item {
+            scroll-snap-align: start;
+            flex: 0 0 100%;
+        }
+
+        div>div>img {
+            aspect-ratio: 21/9;
+            object-fit: cover;
+            object-position: top;
+            height: auto;
+            width: 100%;
+        }
+
+        .sc-item a {
+            margin: 0;
+            height: 2.5rem;
             display: block;
-            padding: 15px;
-            background: #f0f0f0;
+            text-align: center;
             text-decoration: none;
-            color: #333;
-            border-radius: 5px;
+            color: black;
+            font-size: 1.2rem;
         }
-        a:hover { background: #e0e0e0; }
     </style>
 </head>
-<body>
-    <h1>Bài tập Thiết kế Web</h1>
-    <ul>
-        <li><a href="Bài tập cá nhân/baitap1.6chuong1/">Bài tập 1.6 - Chương 1</a></li>
-        <li><a href="Bài tập cá nhân/baitap3.3chuong3/">Bài tập 3.3 - Chương 3</a></li>
-        <li><a href="Bài tập cá nhân/baitap5.3chuong5/">Bài tập 5.3 - Chương 5</a></li>
-        <li><a href="Bài tập cá nhân/baitap6.1.1chuong6/">Bài tập 6.1.1 - Chương 6</a></li>
-        <li><a href="Bài tập cá nhân/baitap6.1.2chuong6/">Bài tập 6.1.2 - Chương 6</a></li>
-        <li><a href="Bài tập cá nhân/baitap6.1.3chuong6/">Bài tập 6.1.3 - Chương 6</a></li>
-    </ul>
+
+<body class="bg-light">
+    <div class="container text-center">
+        <h1 class="mb-3 fw-bold">Website Review Showcase</h1>
+        <p class="text-muted mb-5">Các giao diện website bài tập em đã làm</p>
+        <div class="sc-track">
+            <div class="sc-item"><img src="img/1.6.png" alt="">
+                <hr><a href="/baitap1.6chuong1/html/index.html">Bài tập 1.6 - Chương 1</a>
+            </div>
+            <div class="sc-item"><img src="img/3.3.png" alt="">
+                <hr><a href="/baitap3.3chuong3/3.3.html">Bài tập 3.3 - Chương 3</a>
+            </div>
+            <div class="sc-item"><img src="img/5.3.PNG" alt="">
+                <hr><a href="baitap5.3chuong5/bootstrap/html/index.html">Bài tập 5.3 - Chương 5</a>
+            </div>
+            <div class="sc-item"><img src="img/6.1.1.PNG" alt="">
+                <hr><a href="baitap6.1.1chuong6/HO_CA_VUI_NHON/ho_ca.html">Bài tập 6.1.1 - Chương 6</a>
+            </div>
+            <div class="sc-item"><img src="img/6.1.2.PNG" alt="">
+                <hr><a href="baitap6.1.2chuong6/html/intro.html">Bài tập 6.1.2 - Chương 6</a>
+            </div>
+            <div class="sc-item"><img src="img/6.1.3.png" alt="">
+                <hr><a href="baitap6.1.3chuong6/index.html">Bài tập 6.1.3 - Chương 6</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
